@@ -1,0 +1,2 @@
+mala
+# y # Reverse(mala)
