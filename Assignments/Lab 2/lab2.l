@@ -7,13 +7,12 @@
 
 %%
 
-"#"       { printf("Token and Lexeme: # \n"); }
-\n+       { printf("Token and Lexeme: <newline> \n"); }
-"("       { printf("Token and Lexeme: ( \n"); }
-")"       { printf("Token and Lexeme: ) \n"); }
-"Reverse" { printf("Token: REVERSE; Lexeme: Reverse \n"); }
-[a-z]+    { printf("Token: STRING; Lexeme: %s \n", yytext); }
-.|\n      {  }
+#|,|\(|\)   { printf("Token and Lexeme: %s \n", yytext); }
+\n+         { printf("Token and Lexeme: <newline> \n"); }
+"Reverse"   { printf("Token: REVERSE; Lexeme: Reverse \n"); }
+[a-z]+      { printf("Token: STRING; Lexeme: %s \n", yytext); }
+[\t ]+      {  }
+.|[A-Z]+    { printf("Token could not be matched %s\n", yytext); }
 
 %%
 
