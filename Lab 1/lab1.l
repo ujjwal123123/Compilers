@@ -54,6 +54,7 @@ brace_end          \}|\)|\]
 \n                { code_line_count++; }
 
 .                 { }
+}
 
 %%
 
